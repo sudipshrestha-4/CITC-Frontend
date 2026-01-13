@@ -1,19 +1,19 @@
 {
   "events": [
     {
-      "id": "prompt_to_image_2026",
+      "id": "003",
       "title": "“Prompt to Image” – AI Creativity Competition",
       "date": "2026-01-20",
       "time": "1 Week (Online)",
       "location": "Online / Tallyt",
-      "description": "An AI-based creative competition. Participants must creatively fill in a standardized paragraph prompt and generate an AI-based image. Focus is on prompt quality and storytelling.",
+      "description": "Introduction\nPrompt Engineering has emerged as a critical skill in the modern AI-driven landscape. For engineers, keeping pace with this evolution is no longer optional but an industry-level expectation. Prompt Engineering focuses on the structured and creative formulation of inputs that guide AI systems to produce intended and meaningful outputs.\n\nIn this context, the Computer Engineering Innovation and Tech Club (CITC) proposes an AI-based creative competition titled “Prompt to Image.” This event aims to provide students with a practical platform to explore prompt design, understand human–AI interaction, and demonstrate creativity by transforming textual prompts into compelling visual outputs using AI tools.\n\nObjectives of the Event\nThe primary objectives of the Prompt to Image competition are:\n• To encourage creative and innovative use of Artificial Intelligence\n• To develop practical skills in prompt engineering\n• To enable students to express ideas, emotions, and social issues through AI-generated visuals\n• To enhance digital creativity, innovation, and technological awareness\n• To promote intra-college participation and collaboration\n• To promote ethical and responsible use of AI technologies\n\nEvent Description and Execution Plan\nThe Prompt to Image competition is designed to evaluate participants’ creativity, storytelling ability, and understanding of prompt engineering rather than dependence on advanced or premium AI tools.\n\nTo ensure fairness, originality, and consistency, participants will be provided with a structured paragraph-based prompt framework containing predefined blank spaces. This approach ensures equal creative opportunity for all participants while emphasizing logical thinking and narrative coherence.\n\nPrompt Framework Design\nEach participant will receive one standardized paragraph template prepared by the organizing committee. The paragraph will contain multiple blank sections that participants must creatively complete.\n\nSample Prompt Framework (Illustrative):\n\"In a future where … dominates society, a … stands in the middle of … The atmosphere feels …, symbolizing … Soft … surrounds the scene, while … represents hope, conflict, or transformation. The visual style reflects … , capturing a message about …\"\n\nParticipants must fill in all blanks while maintaining:\n• Logical flow\n• Originality\n• Creative storytelling\n• Ethical sensitivity\nThe completed paragraph will serve as the final prompt used to generate the AI-based image.\n\nEvaluating Criteria\nThe final score will be calculated based on:\n\n1. Judges’ Evaluation (60%)\nSubmissions will be evaluated by multiple judges using a structured rubric to ensure fairness.\n• Creativity & Originality (15%)\n• Prompt Quality & Human Intent (15%)\n• Visual Appeal & Prompt–Image Alignment (15%)\n• Concept Explanation & Reasoning (10%)\n• Ethical & Responsible AI Use (5%)\n\n2. Public / Social Engagement (40%)\nEngagement will be measured from official competition posts shared through CITC-designated platforms.\n• Likes / Reactions (15%)\n• Shares / Reposts (15%)\n• Comments (10%)\n\nPrize Structure\n🏆 Winner: NPR 5,000\n🥈 First Runner-Up: NPR 3,000\n🥉 Second Runner-Up: NPR 2,000",
       "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
       "status": "running",
-      "registration_link": "https://tally.so/r/prompt_to_image_reg",
+      "registration_link": "https://citc.ncit.edu.np/register/ai",
       "tags": ["AI", "Competition", "Prompt Engineering", "Creativity"]
     },
     {
-      "id": "web_dev_bootcamp",
+      "id": "002",
       "title": "Full Stack Web Dev Bootcamp",
       "date": "2025-11-10",
       "time": "11:00 AM",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "id": "tech_talk_cyber",
+      "id": "001",
       "title": "Cybersecurity Trends 2025",
       "date": "2025-10-05",
       "time": "1:00 PM",

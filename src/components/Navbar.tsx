@@ -38,8 +38,8 @@ const Navbar = () => {
                         <div className="flex items-center justify-between">
                             {/* Logo */}
                             <Link to="/" className="flex items-center gap-3 group">
-                                <div className="relative w-20 h-20 flex items-center justify-center rounded-xl group-hover:scale-105 transition-transform duration-300">
-                                    <img src="/CITCLOGO.png" alt="CITC Logo" className="w-full h-full object-contain" />
+                                <div className={`relative flex items-center justify-center rounded-xl group-hover:scale-105 transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-24 h-24'}`}>
+                                    <img src="/CITCLOGO.png" alt="CITC Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-full h-full' : 'w-full h-full'}`} />
                                 </div>
                             </Link>
 

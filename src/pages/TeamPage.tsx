@@ -65,7 +65,7 @@ const TeamPage = () => {
                         if (members.length === 0) return null;
 
                         return (
-                            <section key={team.id} id={team.id} className="scroll-mt-28">
+                            <section key={team.id} id={team.id} className="scroll-mt-28 ">
                                 <div className="flex items-center gap-4 mb-8">
                                     <div className="h-px flex-1 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
                                     <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white text-center min-w-max">
@@ -74,11 +74,12 @@ const TeamPage = () => {
                                     <div className="h-px flex-1 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-center">
                                     {members.map((member) => (
                                         <MemberCard key={member.id} member={member} />
                                     ))}
                                 </div>
+
                             </section>
                         );
                     })}

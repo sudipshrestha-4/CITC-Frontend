@@ -180,7 +180,7 @@
       "member_year": 2025,
       "email": "shyam.231339@ncit.edu.np",
       "socials": {},
-      "photo": "/media/2025/members/shyam_kishor_sah.avif",
+      "photo": "/media/2025/members/shyam_kishor_shah.avif",
       "type": "Regular",
       "semester": "V/VI",
       "teamId": "t_exec_2025"
@@ -242,6 +242,22 @@
       "photo": "",
       "type": "Regular",
       "semester": "III/IV",
+      "teamId": "t_exec_2025"
+    },
+    {
+      "id": "16",
+      "name": "Anamol Rijal",
+      "year": 1,
+      "member_year": 2025,
+      "email": "anamol@ncit.edu.np",
+      "socials": {
+        "github": "https://github.com/",
+        "linkedin": "https://www.linkedin.com/",
+        "instagram": "https://www.instagram.com/"
+      },
+      "photo": "/media/2025/members/anmol.avif",
+      "type": "Regular",
+      "semester": "I/II",
       "teamId": "t_exec_2025"
     }
   ]

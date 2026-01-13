@@ -39,10 +39,6 @@ const Hero = () => {
                         </span>
 
                     </h1>
-
-
-                    {/* Subheading */}
-                    {/* Subheading */}
                     <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-light animate-fade-in [animation-delay:400ms]">
                         Join the premier student community at NCIT. Where lines of code turn into
                         <span className="text-slate-900 dark:text-slate-200 font-medium"> innovation</span> and students become
