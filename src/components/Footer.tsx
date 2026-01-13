@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
     return (

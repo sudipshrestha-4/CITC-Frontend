@@ -1,0 +1,39 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      # 1. Checkout repository (default workspace)
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      # 2. Set up Node.js
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3. Install dependencies and build
+      - name: Build dist folder
+        run: |
+          npm ci --production
+          npm run build
+
+      # 4. Sync dist to the directory Docker expects
+      - name: Update Docker dist folder
+        run: |
+          rsync -av --delete dist/ ~/CITClub/frontend/dist/
+
+      # 5. Docker Compose deploy
+      - name: Docker deploy
+        run: |
+          cd ~/Server
+          docker compose down frontend-citc
+          docker compose up frontend-citc --build -d
