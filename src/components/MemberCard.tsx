@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Instagram, Mail, User } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, User, Globe } from 'lucide-react';
 import type { Member } from '../types';
 
 interface MemberCardProps {
@@ -7,8 +7,31 @@ interface MemberCardProps {
 }
 
 const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
+    // Generate Person schema for SEO
+    const personSchema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": member.name,
+        "email": member.email,
+        ...(member.photo && { "image": member.photo }),
+        ...(member.title && { "jobTitle": member.title }),
+        ...(member.department && { "affiliation": member.department }),
+        "sameAs": [
+            ...(member.socials?.github ? [member.socials.github] : []),
+            ...(member.socials?.linkedin ? [member.socials.linkedin] : []),
+            ...(member.socials?.instagram ? [member.socials.instagram] : []),
+            ...(member.socials?.facebook ? [member.socials.facebook] : []),
+            ...(member.socials?.twitter ? [member.socials.twitter] : []),
+            ...(member.socials?.website ? [member.socials.website] : [])
+        ].filter(Boolean)
+    };
+
     return (
         <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            {/* Person Schema for SEO */}
+            <script type="application/ld+json">
+                {JSON.stringify(personSchema)}
+            </script>
             {/* Image Container with aspect ratio */}
             <div className="relative aspect-[3/4] overflow-hidden bg-slate-200 dark:bg-slate-700">
                 {member.photo ? (
@@ -76,6 +99,19 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <Instagram className="w-5 h-5" />
+                            </a>
+                        )}
+
+                        {member.socials?.website && (
+                            <a
+                                href={member.socials.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-3 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-slate-700 dark:text-slate-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all duration-300 hover:scale-125 shadow-lg"
+                                title="Website"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <Globe className="w-5 h-5" />
                             </a>
                         )}
                     </div>

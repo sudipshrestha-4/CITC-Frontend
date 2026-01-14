@@ -4,6 +4,7 @@ export interface Socials {
     instagram?: string;
     facebook?: string;
     twitter?: string;
+    website?: string;
 }
 
 export interface Team {
