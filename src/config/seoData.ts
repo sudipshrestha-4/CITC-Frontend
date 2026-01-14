@@ -2,17 +2,17 @@ export const SITE_CONFIG = {
     name: "CITC",
     fullName: "Computer Engineering Innovation & Tech Club (CITC)",
     url: "https://citc.ncit.edu.np",
-    description: "Computer Engineering Innovation & Tech Club at Nepal College of Information Technology - fostering innovation and tech education",
+    description: "Computer Engineering Innovation & Tech Club at Nepal College of Information Technology - Innovate. Connect. Transform",
     logo: "https://citc.ncit.edu.np/favicon/favicon.ico",
     email: "citc@ncit.edu.np",
-    foundingDate: "2020",
+    foundingDate: "2025",
     location: {
         country: "NP",
-        region: "NP-3",
+        region: "Bagmati",
         city: "Lalitpur",
         coordinates: {
-            latitude: "27.6669",
-            longitude: "85.3167"
+            latitude: "27.671419683136147",
+            longitude: " 85.33875975286703"
         }
     },
     social: {
@@ -25,15 +25,15 @@ export const SITE_CONFIG = {
 
 export const SEO_PAGES = {
     home: {
-        title: "CITC - Computer Engineering Innovation & Tech Club | Tech Community at NCIT",
+        title: "CITC | Tech Community at NCIT",
         description: "Join CITC (Computer Engineering Innovation & Tech Club) - the premier tech community at Nepal College of Information Technology. Discover workshops, events, hackathons, and networking opportunities for aspiring tech enthusiasts.",
-        keywords: "CITC, computer club, IT club, tech community, NCIT, Nepal College, workshops, hackathons, tech events, programming, coding club",
-        ogImage: "/media/og-home.jpg",
+        keywords: "CITC, computer club,ncit club,ncit tech club,ncit tech community, IT club, tech community, NCIT, Nepal College, workshops, hackathons, tech events, programming, coding club",
+        ogImage: "/media/og-team.avif",
         path: "/"
     },
     team: {
         title: "Our Team - CITC | Meet the Club Leaders",
-        description: "Meet the passionate team members of Computer Engineering Innovation & Tech Club (CITC) - Executive Committee, Mentors, Faculty Advisors, and Patrons driving innovation and tech education.",
+        description: "Meet the passionate team members of Computer Engineering Innovation & Tech Club (CITC) - Executive Committee, Mentors, Faculty Advisors, and Patron driving innovation and tech education.",
         keywords: "CITC team, computer club, tech club members, NCIT tech community, student tech leaders, executive committee",
         ogImage: "/media/og-team.avif",
         path: "/team"
@@ -42,7 +42,7 @@ export const SEO_PAGES = {
         title: "Events & Workshops - CITC | Tech Events at NCIT",
         description: "Explore upcoming tech events and workshops at CITC. Join hackathons, coding competitions, seminars, and networking sessions to enhance your tech skills.",
         keywords: "tech events, workshops, hackathons, coding competitions, tech seminars, CITC events, NCIT tech community",
-        ogImage: "/media/og-events.jpg",
+        ogImage: "/media/og-team.avif",
         path: "/events"
     }
 } as const;
