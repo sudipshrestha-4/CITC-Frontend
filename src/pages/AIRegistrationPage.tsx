@@ -12,15 +12,14 @@ const AIRegistrationPage = () => {
   const TARGET_DATE = new Date('2026-01-18T00:00:00+05:45').getTime();
 
   const [isExpired, setIsExpired] = useState(false);
-  const [countdown, setCountdown] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const [countdown, setCountdown] = useState({ days:0, hours:0, minutes:0, seconds:0 });
+  const [prevCountdown, setPrevCountdown] = useState(countdown);
+  const splitDigits = (num: number) => {
+  return num.toString().padStart(2, '0').split('');
+};
+
 
   useEffect(() => {
-    // Load Tally embed script
     const script = document.createElement('script');
     script.src = 'https://tally.so/widgets/embed.js';
     script.async = true;
@@ -38,28 +37,32 @@ const AIRegistrationPage = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const updateCountdown = () => {
-      const now = Date.now();
-      const distance = TARGET_DATE - now;
+ useEffect(() => {
+  const updateCountdown = () => {
+    const now = Date.now();
+    const distance = TARGET_DATE - now;
 
-      if (distance <= 0) {
-        setIsExpired(true);
-        return;
-      }
+    if (distance <= 0) {
+      setIsExpired(true);
+      return;
+    }
 
-      setCountdown({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((distance / (1000 * 60)) % 60),
-        seconds: Math.floor((distance / 1000) % 60),
-      });
+    const newCountdown = {
+      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((distance / (1000 * 60)) % 60),
+      seconds: Math.floor((distance / 1000) % 60),
     };
 
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
-    return () => clearInterval(timer);
-  }, [TARGET_DATE]);
+    setPrevCountdown(countdown);  // store previous values
+    setCountdown(newCountdown);    // update current
+  };
+
+  updateCountdown(); // update immediately
+  const timer = setInterval(updateCountdown, 1000);
+  return () => clearInterval(timer);
+}, [countdown, TARGET_DATE]);
+
 
   const units: Array<[string, number]> = [
     ['days', countdown.days],
@@ -87,7 +90,7 @@ const AIRegistrationPage = () => {
           <motion.div
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border border-cyan-500/20 mb-6 sm:mb-8 text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-medium shadow-lg"
+            className="inline-flex items-center  px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border border-cyan-500/20 mb-6 sm:mb-8 text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-medium shadow-lg"
           >
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
             AI Image Prompting Competition
@@ -128,23 +131,43 @@ const AIRegistrationPage = () => {
                 aria-label="Countdown timer"
                 aria-live="polite"
               >
-                {units.map(([key, value]) => (
-                  <div key={key} className="flex flex-col items-center">
-                    <motion.div
-                      key={`${key}-${value}`}
-                      initial={{ y: -6, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 6, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="font-extrabold leading-none text-6xl sm:text-7xl md:text-8xl text-cyan-600 dark:text-cyan-300"
-                    >
-                      {value < 10 ? `0${value}` : value}
-                    </motion.div>
-                    <div className="mt-2 text-lg uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                      {key}
-                    </div>
-                  </div>
-                ))}
+                {units.map(([key, value]) => {
+  const prevValue = prevCountdown[key as keyof typeof prevCountdown];
+  const currDigits = splitDigits(value);
+  const prevDigits = splitDigits(prevValue);
+
+  return (
+    <div key={key} className="flex flex-col items-center">
+      <div className="flex space-x-1 sm:space-x-1 md:space-x-1">
+        {currDigits.map((digit, index) => {
+          const digitChanged = digit !== prevDigits[index];
+
+          return (
+          <div className="bg-white/90 dark:bg-slate-900/80 rounded-xl shadow-md p-1 sm:p-2 w-10 h-14 sm:w-14 sm:h-20 md:w-16 md:h-24 flex items-center justify-center">
+
+  <motion.span
+    key={`${key}-${index}-${digit}`}
+    initial={digitChanged ? { y: -20, opacity: 0 } : false}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.25 }}
+    className="font-mono text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
+  >
+    {digit}
+  </motion.span>
+</div>
+
+          );
+        })}
+      </div>
+     <div className="mt-2 text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-center">
+  {key}
+</div>
+
+    </div>
+  );
+})}
+
+                
               </div>
             </div>
           )}
