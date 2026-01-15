@@ -99,15 +99,15 @@ const AIRegistrationPage = () => {
           </h1>
 
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto px-4">
-            {!isExpired 
-              ? 'Prepare yourself. The AI Image Prompting challenge begins soon.' 
+            {!isExpired
+              ? 'Prepare yourself. The AI Image Prompting challenge begins soon.'
               : 'Register now for the AI Image Prompting Competition 2026.'}
           </p>
 
           {/* Rulebook Link */}
           <div className="mb-8">
             <a
-              href="https://drive.google.com/file/d/1huoBP5mijSC2-fGAy8J9cUhPGf_wu64S/view"
+              href="https://drive.google.com/file/d/164Vw1m9AI3lj2XOj_J8pANZoPWcLBadM/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-105"
